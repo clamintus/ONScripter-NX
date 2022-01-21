@@ -72,7 +72,7 @@ void switch_init()
 
     Result rc = romfsInit();
     if ( R_FAILED( rc ) )
-        fprintf( stderr, "romfsInit: %s\n", rc );
+        fprintf( stderr, "romfsInit: %08X\n", rc );
 }
 
 int switch_getinput( void* data )
