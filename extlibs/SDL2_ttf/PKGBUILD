@@ -1,0 +1,58 @@
+# Maintainer:  Dave Murphy <davem@devkitpro.org>
+# Contributor: Cpasjuste <cpasjuste@gmail.com>
+# Contributor: carstene1ns <dev f4ke de>
+
+pkgname=switch-sdl2_ttf
+pkgver=2.0.15
+pkgrel=1
+pkgdesc="SDL2 TrueType font library (Nintendo Switch port)."
+arch=('any')
+url="https://libsdl.org/projects/SDL_ttf/"
+license=("zlib")
+options=(!strip libtool staticlibs)
+# makedepends=('switch-pkg-config' 'dkp-toolchain-vars')
+# depends=(
+#   'switch-sdl2'
+#   'switch-freetype'
+# )
+source=("${url}release/SDL2_ttf-${pkgver}.zip"
+        "bug1433.patch")
+sha256sums=('CDB72B5B1C3B27795FA128AF36F369FEE5D3E38A96C350855DA0B81880555DBC'
+            'D13DA7CA38660EA299DF4A3D495DF73CA49DF81265FE2D57568C0FA276F7D62E')
+groups=('switch-portlibs' 'switch-sdl2')
+
+prepare() {
+  cd "${srcdir}/SDL2_ttf-${pkgver}"
+
+  # https://bugs.archlinux.org/task/28674
+  patch -Np1 -i "${srcdir}/bug1433.patch"
+}
+
+build() {
+  cd SDL2_ttf-$pkgver
+
+  source ${DEVKITPRO}/switchvars.sh
+
+  # patch out compiling showfont and glfont
+  sed '/^noinst_PROGRAMS/d' -i Makefile.in
+
+  ./configure --prefix="${PORTLIBS_PREFIX}" \
+    --host=aarch64-none-elf --disable-shared --enable-static \
+    --disable-sdltest --without-x
+
+  make
+}
+
+package() {
+  cd SDL2_ttf-$pkgver
+
+  source /opt/devkitpro/switchvars.sh
+
+  make DESTDIR="$pkgdir" install
+
+  # add our static lib
+  echo "Requires.private: freetype2" >> "${pkgdir}/${PORTLIBS_PREFIX}/lib/pkgconfig/SDL2_ttf.pc"
+
+  # License
+  install -Dm644 "COPYING.txt" "${pkgdir}/${PORTLIBS_PREFIX}/licenses/${pkgname}/COPYING.txt"
+}

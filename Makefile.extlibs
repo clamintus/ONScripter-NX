@@ -1,0 +1,18 @@
+# -*- Makefile -*-
+#
+# Makefile.extlibs - Makefile rules for external libraries: SDL2_ttf.
+#
+#					 This is to fix a broken SDL2_ttf function used in ONScripter (TTF_RenderUTF8_Shaded).
+#					 Standard MSYS2 releases of this package don't come with this bug fixed.
+#
+#					---------------------------------------------------------------------------------------
+#					| If you see a text rendering bug while using ONScripter, it may be convenient to     |
+#					| build the patched SDL2_ttf using this Makefile before compiling ONScripter.         |
+#				    ---------------------------------------------------------------------------------------
+#
+
+all: lib/libSDL2_ttf.a include/SDL2/SDL_ttf.h
+
+lib/libSDL2_ttf.a include/SDL2/SDL/SDL_ttf.h:
+	(cd extlibs/SDL2_ttf && makepkg -f)
+	cp -r extlibs/SDL2_ttf/pkg/switch-sdl2_ttf/opt/devkitpro/portlibs/switch/* .

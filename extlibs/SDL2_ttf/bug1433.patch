@@ -1,0 +1,23 @@
+--- a/SDL_ttf.c	2022-01-05 19:38:23.932409700 +0100
++++ b/SDL_ttf.c	2022-01-05 19:42:43.206973500 +0100
+@@ -1523,14 +1523,12 @@
+             xstart += delta.x >> 6;
+         }
+ 
+-        for (row = 0; row < current->rows; ++row) {
+-            dst = (Uint8 *)textbuf->pixels +
+-                (row + ystart + glyph->yoffset) * textbuf->pitch +
+-                xstart + glyph->minx;
+-            src = current->buffer + row * current->pitch;
+-            for (col = current->width; col > 0; --col) {
+-                *dst++ |= *src++;
+-            }
++        src = current->buffer;
++        dst = (Uint8*) textbuf->pixels;
++        for ( row = 0; row < current->rows; ++row ) {
++            memcpy( dst, src, current->width );
++            src += current->pitch;
++            dst += textbuf->pitch;
+         }
+ 
+         xstart += glyph->advance;
