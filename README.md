@@ -23,9 +23,11 @@ Any game that uses legacy ONScripter should run just fine though. If not, please
 - Go to the folder where `onscripter-nx.nro` is located (`/switch/` followed by `onscripter-nx/` or game-specific folder name)
 - Copy the game files in that folder:
     - `arc*.nsa` / `arc*.sar`
-    - `nscript.dat` (you don't need this if you are using a game-specific version)
+    - `nscript.dat`
+        - You don't need this if you are using a game-specific version of ONScripter-NX.
     - Soundtracks (`CD` folder, ...)
-    - `default.ttf` font (you don't need this if you are using a game-specific version)
+    - `default.ttf` font
+        - You don't need this if you are using a game-specific version of ONScripter-NX.
 - Launch ONScripter-NX from hbmenu
     - _Note:_ Launching from the album applet seems to work, but it is strongly advised to launch it by holding R on an installed game to avoid potential memory problems since that's the normal environment where Switch homebrews are designed to run.
 - Enjoy!
