@@ -23,7 +23,7 @@ Any game that uses legacy ONScripter should run just fine though. If not, please
 - Go to the folder where `onscripter-nx.nro` is located (`/switch/` followed by `onscripter-nx/` or game-specific folder name)
 - Copy the game files in that folder:
     - `arc*.nsa` / `arc*.sar`
-    - `nscript.dat`
+    - `nscript.dat` / `nscript.___`
         - You don't need this if you are using a game-specific version of ONScripter-NX.
     - Soundtracks (`CD` folder, ...)
     - `default.ttf` font
