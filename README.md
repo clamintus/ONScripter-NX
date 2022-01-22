@@ -19,12 +19,13 @@ I'm planning on testing other visual novels too.
 Any game that uses legacy ONScripter should run just fine though. If not, please open an issue! :)
 
 ## How to Play
-- Put `onscripter-nx.nro` in an empty folder
-- Copy the game files in the new folder:
+- Extract `onscripter-nx.zip` (or a game-specific zip from the releases) to the root of your SD card
+- Go to the folder where `onscripter-nx.nro` is located (`/switch/` followed by `onscripter-nx/` or game-specific folder name)
+- Copy the game files in that folder:
     - `arc*.nsa` / `arc*.sar`
-    - `nscript.dat`
+    - `nscript.dat` (you don't need this if you are using a game-specific version)
     - Soundtracks (`CD` folder, ...)
-    - `default.ttf` font
+    - `default.ttf` font (you don't need this if you are using a game-specific version)
 - Launch ONScripter-NX from hbmenu
     - _Note:_ Launching from the album applet seems to work, but it is strongly advised to launch it by holding R on an installed game to avoid potential memory problems since that's the normal environment where Switch homebrews are designed to run.
 - Enjoy!
@@ -67,7 +68,7 @@ If it happens to you, please see the following section for building the external
 - [SDL2 Port](http://www.github.com/clamintus/onscripter-20060724-insani-sdl2) by clamintus
 - Switch Port by clamintus
 - Studio O.G.A. Ogapee - [original ONScripter](http://onscripter.osdn.jp/onscripter.html)
-- insani - [modified version of ONScripter](http://nscripter.insani.org/onscripter.html)
+- insani - [modified version of ONScripter](http://nscripter.insani.org/onscripter.html) and ONScripter Logo
 - Tomi - SDL2_ttf patch
 
 And a huge thanks to SciresM for helping me out, and for his awesome work on Atmosphére's GDB stub <3
