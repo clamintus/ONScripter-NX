@@ -46,7 +46,7 @@ ROMFS	:=	romfs
 
 APP_TITLE	:=	ONScripter-NX
 APP_AUTHOR	:=	clamintus
-APP_VERSION	:=	0.1
+APP_VERSION	:=	0.2
 
 #---------------------------------------------------------------------------------
 # options for code generation
