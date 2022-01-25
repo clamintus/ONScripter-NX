@@ -1,0 +1,33 @@
+.*/
+
+# Built extlibs
+lib/*
+extlibs/SDL2_ttf/*
+!*.patch
+!PKGBUILD
+include/SDL2/
+licenses/
+
+# App build
+build/
+*.elf
+*.nso
+*.pfs0
+*.nacp
+*.nro
+*.nsp
+*.npdm
+*.lst
+
+# Convenience stuff
+switch/
+screens/
+*.zip
+*.py
+
+# Custom builds stuff
+nacps/
+romfs_*/
+icon_*.jpg
+Makefile.*
+!Makefile.extlibs
