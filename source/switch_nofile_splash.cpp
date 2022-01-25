@@ -32,13 +32,17 @@ const char* _CORNER_TEXT_2_  = "by clamintus";
 
 int switch_check_files()
 {
+    FILE* romfs_fp1 = fopen( "romfs:/arc.nsa", "rb" );
+    FILE* romfs_fp2 = fopen( "romfs:/arc.sar", "rb" );
     FILE* fp1 = fopen( "arc.nsa", "rb" );
     FILE* fp2 = fopen( "arc.sar", "rb" );
 
+    if (romfs_fp1) fclose(fp1);
+    if (romfs_fp2) fclose(fp2);
     if (fp1) fclose(fp1);
     if (fp2) fclose(fp2);
 
-    if ( !fp1 && !fp2 )
+    if ( !( romfs_fp1 || romfs_fp2 || fp1 || fp2 ) )
         return -1;
     
     return 0;
