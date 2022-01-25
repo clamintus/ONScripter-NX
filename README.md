@@ -1,5 +1,8 @@
 # Nintendo Switch Port of ONScripter
 
+![Definitely the best girl](https://user-images.githubusercontent.com/44071820/151049031-e6a37a39-9ca2-4830-a533-2577130e57e0.jpg)
+
+
 A port of [onscripter-20060724-insani-sdl2](http://www.github.com/clamintus/onscripter-20060724-insani-sdl2) to the Switch.
 
 I specifically made this to support running older NScripter-based games that would break on ONScripter-EN.
