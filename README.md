@@ -5,7 +5,7 @@
 
 A port of [onscripter-20060724-insani-sdl2](http://www.github.com/clamintus/onscripter-20060724-insani-sdl2) to the Switch.
 
-I specifically made this to support running older NScripter-based games that would break on ONScripter-EN.
+I specifically made this to support running older NScripter-based games that would break on newer versions of ONScripter or ONScripter-EN.
 
 ## Features
 - 4:3 aspect ratio simulation
