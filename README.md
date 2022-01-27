@@ -36,17 +36,20 @@ Any game that uses legacy ONScripter should run just fine though. If not, please
 - Enjoy!
 
 ## Controls
+### Joy-Con Controls
+- A -> Enter (or text advance)
+- B -> Go back (or text advance)
+- X -> Right-click Menu
+- Y -> Toggle "Draw full page at once" mode
+- D-Pad Up or L -> Scroll up text history
+- D-Pad Down or R -> Scroll down text history
+- Hold ZL or ZR -> Skip text
+- Plus -> Exit to homebrew menu
+### Joystick Controls
+- Joystick Up or Joystick Left -> Previous Element
+- Joystick Down or Joystick Right -> Next Element
 
-- A : Enter (or proceed in text mode)
-- B : Back (or proceed in text mode)
-- X : Right-click Menu
-- Y : Draw full page at once
-- Joystick UP / Joystick LEFT : Previous element
-- Joystick DOWN / Joystick RIGHT : Next element
-- D-Pad UP / L : Scroll up text history
-- D-Pad DOWN / R : Scroll down text history
-- ZL / ZR (held) : Skip mode
-- Plus : Exit to homebrew menu
+Touch input is supported too.
 
 ## Building instructions
 - You need [devkitPro](https://switchbrew.org/wiki/Setting_up_Development_Environment) in order to build ONScripter-NX and its external libraries.
