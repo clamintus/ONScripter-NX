@@ -44,7 +44,11 @@ DATA		:=	data
 INCLUDES	:=	include
 ROMFS	:=	romfs
 
-APP_TITLE	:=	ONScripter-NX
+ifdef GAME
+	APP_TITLE	:=	$(GAME) (ONScripter-NX)
+else
+	APP_TITLE	:=	ONScripter-NX
+endif
 APP_AUTHOR	:=	clamintus
 APP_VERSION	:=	0.3
 
@@ -164,7 +168,11 @@ ifeq ($(strip $(NO_ICON)),)
 endif
 
 ifeq ($(strip $(NO_NACP)),)
-	export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
+	ifdef NACP
+		export NROFLAGS += --nacp=$(CURDIR)/$(NACP)
+	else
+		export NROFLAGS += --nacp=$(CURDIR)/$(TARGET).nacp
+	endif
 endif
 
 ifneq ($(APP_TITLEID),)
@@ -193,7 +201,11 @@ $(BUILD):
 clean:
 	@echo clean ...
 ifeq ($(strip $(APP_JSON)),)
-	@rm -fr $(BUILD) $(TARGET).nro $(TARGET).nacp $(TARGET).elf
+	ifdef NACP
+		@rm -fr $(BUILD) $(TARGET).nro $(NACP) $(TARGET).elf
+	else
+		@rm -fr $(BUILD) $(TARGET).nro $(TARGET).nacp $(TARGET).elf
+	endif
 else
 	@rm -fr $(BUILD) $(TARGET).nsp $(TARGET).nso $(TARGET).npdm $(TARGET).elf
 endif
@@ -213,7 +225,11 @@ ifeq ($(strip $(APP_JSON)),)
 all	:	$(OUTPUT).nro
 
 ifeq ($(strip $(NO_NACP)),)
-$(OUTPUT).nro	:	$(OUTPUT).elf $(OUTPUT).nacp
+ifdef NACP
+	$(OUTPUT).nro	:	$(OUTPUT).elf $(NACP)
+else
+	$(OUTPUT).nro	:	$(OUTPUT).elf $(OUTPUT).nacp
+endif
 else
 $(OUTPUT).nro	:	$(OUTPUT).elf
 endif
