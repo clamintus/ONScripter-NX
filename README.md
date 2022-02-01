@@ -77,8 +77,8 @@ If it happens to you, please see the following section for building the external
 ## Credits
 - [SDL2 Port](http://www.github.com/clamintus/onscripter-20060724-insani-sdl2) by clamintus
 - Switch Port by clamintus
-- Studio O.G.A. Ogapee - [original ONScripter](http://onscripter.osdn.jp/onscripter.html)
-- insani - [modified version of ONScripter](http://nscripter.insani.org/onscripter.html) and ONScripter Logo
+- Studio O.G.A. Ogapee - [original ONScripter](http://onscripter.osdn.jp/onscripter.html) and ONScripter Logo
+- insani - [modified version of ONScripter](http://nscripter.insani.org/onscripter.html)
 - Tomi - SDL2_ttf patch
 
 And a huge thanks to SciresM for helping me out, and for his awesome work on Atmosphére's GDB stub <3
