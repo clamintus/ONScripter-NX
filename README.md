@@ -55,8 +55,10 @@ Touch input is supported too.
 - You need [devkitPro](https://switchbrew.org/wiki/Setting_up_Development_Environment) in order to build ONScripter-NX and its external libraries.
 - Open the shell (devkitPro MSYS if on Windows)
 - Install the dependencies packages
-    - SDL2: `pacman -S switch-sdl2 switch-sdl2_image switch-sdl2_mixer switch-sdl2_ttf`
-    - SMPEG2: `pacman -S switch-smpeg2`
+    - the switch-dev metapackage: `pacman -S --needed switch-dev`
+    - SDL2: `pacman -S --needed switch-sdl2 switch-sdl2_image switch-sdl2_mixer switch-sdl2_ttf`
+    - SMPEG2: `pacman -S --needed switch-smpeg2`
+    - libvorbis: `pacman -S --needed switch-libvorbis`
 - **IMPORTANT!** At the time of writing this, the switch-sdl2_ttf package available through devkitPro pacman is broken and causes the app to not display text properly.
 If it happens to you, please see the following section for building the external libraries, where I've provided a patch for switch-sdl2_ttf.
 - If you want to integrate all your game files in one executable, put them in the `romfs` folder
@@ -66,8 +68,8 @@ If it happens to you, please see the following section for building the external
 ### Building external libraries
 - Open the shell (devkitPro MSYS if on Windows)
 - Install the dependencies packages
-    - pkg-config: `pacman -S switch-pkg-config`
-    - devkitPro helper scripts: `pacman -S dkp-toolchain-vars`
+    - the patch utility: `pacman -S --needed patch`
+    - devkitPro helper scripts: `pacman -S --needed dkp-toolchain-vars`
 - In your open shell, `cd` to the folder of this repository
 - Run `make -f Makefile.extlibs`
 
