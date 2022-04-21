@@ -1,6 +1,6 @@
 # Nintendo Switch Port of ONScripter
 
-![Best girl!](https://user-images.githubusercontent.com/44071820/163875629-889fcb98-7858-42d8-b495-fe7257ffc389.png)
+![Best girl!](https://user-images.githubusercontent.com/44071820/164560834-23aee131-bccc-47f1-9648-2016526cbccf.png)
 
 
 A port of [onscripter-20060724-insani-sdl2](http://www.github.com/clamintus/onscripter-20060724-insani-sdl2) to the Switch.
