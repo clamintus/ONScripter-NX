@@ -726,7 +726,7 @@ private:
     int  proceedAnimation();
     int  estimateNextDuration( AnimationInfo *anim, SDL_Rect &rect, int minimum );
     void resetRemainingTime( int t );
-    void setupAnimationInfo( AnimationInfo *anim, FontInfo *info=NULL );
+    void setupAnimationInfo( AnimationInfo *anim, FontInfo *info=NULL, bool do_scaling=true );
     void parseTaggedString( AnimationInfo *anim );
     void drawTaggedSurface( SDL_Surface *dst_surface, AnimationInfo *anim, SDL_Rect &clip );
     void stopAnimation( int click );

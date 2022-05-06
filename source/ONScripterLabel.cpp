@@ -1586,7 +1586,7 @@ void ONScripterLabel::loadCursor( int no, const char *str, int x, int y, bool ab
     cursor_info[ no ].pos.y = y;
 
     parseTaggedString( &cursor_info[ no ] );
-    setupAnimationInfo( &cursor_info[ no ] );
+    setupAnimationInfo( &cursor_info[ no ], NULL, false );
     if ( filelog_flag )
         script_h.findAndAddLog( script_h.log_info[ScriptHandler::FILE_LOG], cursor_info[ no ].file_name, true ); // a trick for save file
     cursor_info[ no ].abs_flag = abs_flag;

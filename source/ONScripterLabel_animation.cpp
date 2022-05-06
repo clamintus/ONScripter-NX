@@ -119,10 +119,20 @@ void ONScripterLabel::resetRemainingTime( int t )
     }
 }
 
-void ONScripterLabel::setupAnimationInfo( AnimationInfo *anim, FontInfo *info )
+void ONScripterLabel::setupAnimationInfo( AnimationInfo *anim, FontInfo *info, bool do_scaling )
 {
     anim->deleteSurface();
     anim->abs_flag = true;
+
+#ifdef __SWITCH__
+    int screen_ratio1_orig, screen_ratio2_orig;
+    if ( !do_scaling ) { // don't scale cursors because sometimes they look buggy
+        screen_ratio1_orig = screen_ratio1;
+        screen_ratio2_orig = screen_ratio2;
+        screen_ratio1 = 1;
+        screen_ratio2 = 1;
+    }
+#endif
 
     if ( anim->trans_mode == AnimationInfo::TRANS_STRING ){
         FontInfo f_info = sentence_font;
@@ -190,6 +200,13 @@ void ONScripterLabel::setupAnimationInfo( AnimationInfo *anim, FontInfo *info )
         if ( surface ) SDL_FreeSurface(surface);
         if ( surface_m ) SDL_FreeSurface(surface_m);
     }
+
+#ifdef __SWITCH__
+    if ( !do_scaling ) {
+        screen_ratio1 = screen_ratio1_orig;
+        screen_ratio2 = screen_ratio2_orig;
+    }
+#endif
 
 }
 
