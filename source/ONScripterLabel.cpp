@@ -34,7 +34,7 @@ extern "C" void waveCallback( int channel );
 #define FONT_FILE "default.ttf"
 #define REGISTRY_FILE "registry.txt"
 #define DLL_FILE "dll.txt"
-#define DEFAULT_ENV_FONT "ÔøΩlÔøΩr ÔøΩSÔøΩVÔøΩbÔøΩN"
+#define DEFAULT_ENV_FONT "ÇlÇr ÉSÉVÉbÉN"
 #define DEFAULT_VOLUME 100
 
 typedef int (ONScripterLabel::*FuncList)();
@@ -1292,8 +1292,8 @@ int ONScripterLabel::parseLine( )
             current_text_buffer->addBuffer( 0x0a );
             sentence_font.newLine();
             for (int i=0 ; i<indent_offset ; i++){
-                current_text_buffer->addBuffer(((char*)"ÔøΩ@")[0]);
-                current_text_buffer->addBuffer(((char*)"ÔøΩ@")[1]);
+                current_text_buffer->addBuffer(((char*)"Å@")[0]);
+                current_text_buffer->addBuffer(((char*)"Å@")[1]);
                 sentence_font.advanceCharInHankaku(2);
             }
         }
