@@ -340,7 +340,7 @@ int ScriptParser::open()
 #if defined(PDA)
         screen_ratio1 = 2;
         screen_ratio2 = 5;
-#elif defined(__SWITCH__)
+#elif defined(__SWITCH__) && defined(FORCE_HD)
         screen_ratio1 = 6;
         screen_ratio2 = 5;
 #else
@@ -354,7 +354,7 @@ int ScriptParser::open()
 #if defined(PDA)
         screen_ratio1 = 4;
         screen_ratio2 = 5;
-#elif defined(__SWITCH__)
+#elif defined(__SWITCH__) && defined(FORCE_HD)
         screen_ratio1 = 12;
         screen_ratio2 = 5;
 #else
@@ -365,7 +365,7 @@ int ScriptParser::open()
         screen_height = 300 * screen_ratio1 / screen_ratio2;
         break;
       case ScriptHandler::SCREEN_SIZE_320x240:
-#if defined(__SWITCH__)
+#if defined(__SWITCH__) && defined(FORCE_HD)
         screen_ratio1 = 3;
         screen_ratio2 = 1;
 #else
@@ -380,7 +380,7 @@ int ScriptParser::open()
 #if defined(PDA)
         screen_ratio1 = 1;
         screen_ratio2 = 2;
-#elif defined(__SWITCH__)
+#elif defined(__SWITCH__) && defined(FORCE_HD)
         screen_ratio1 = 3;
         screen_ratio2 = 2;
 #else
