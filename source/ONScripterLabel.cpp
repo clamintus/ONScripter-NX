@@ -34,7 +34,7 @@ extern "C" void waveCallback( int channel );
 #define FONT_FILE "default.ttf"
 #define REGISTRY_FILE "registry.txt"
 #define DLL_FILE "dll.txt"
-#define DEFAULT_ENV_FONT "‚l‚r ƒSƒVƒbƒN"
+#define DEFAULT_ENV_FONT "ï¿½lï¿½r ï¿½Sï¿½Vï¿½bï¿½N"
 #define DEFAULT_VOLUME 100
 
 typedef int (ONScripterLabel::*FuncList)();
@@ -367,14 +367,12 @@ void ONScripterLabel::initSDL()
     #endif
         exit(-1);
     }
-#ifdef SDL2
+#if defined(__SWITCH__)
+    printf("Display: %d x %d (%d x %d emulated)\n", screen_width_wide, screen_height, screen_width, screen_height);
+#elif defined(SDL2)
     printf("Display: %d x %d\n", screen_width, screen_height);
 #else
     printf("Display: %d x %d (%d bpp)\n", screen_width, screen_height, screen_bpp);
-#endif
-
-#ifdef __SWITCH__
-    screen_width = 640;
 #endif
 
     initSJIS2UTF16();
@@ -1294,8 +1292,8 @@ int ONScripterLabel::parseLine( )
             current_text_buffer->addBuffer( 0x0a );
             sentence_font.newLine();
             for (int i=0 ; i<indent_offset ; i++){
-                current_text_buffer->addBuffer(((char*)"@")[0]);
-                current_text_buffer->addBuffer(((char*)"@")[1]);
+                current_text_buffer->addBuffer(((char*)"ï¿½@")[0]);
+                current_text_buffer->addBuffer(((char*)"ï¿½@")[1]);
                 sentence_font.advanceCharInHankaku(2);
             }
         }
