@@ -64,7 +64,11 @@ CFLAGS	:=	-g -Wall -ffunction-sections -Wno-write-strings -Wno-narrowing \
 
 CFLAGS	+=	-D__SWITCH__ $(INCLUDE) `sdl2-config --cflags` `smpeg2-config --cflags`\
             -DUSE_OGG_VORBIS -DENABLE_1BYTE_CHAR -DFORCE_1BYTE_CHAR -DINSANI -DSDL2
-#CFLAGS	+=	-DFORCE_HD -DDEBUG
+#CFLAGS	+=	-DDEBUG
+
+ifdef FORCE_HD
+	CFLAGS += -DFORCE_HD
+endif
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
