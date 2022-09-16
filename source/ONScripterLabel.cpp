@@ -1684,6 +1684,8 @@ void ONScripterLabel::quit()
     saveAll();
     
 #ifdef __SWITCH__
+    switch_deinit();
+    
     thread_data->break_flag = true;
     SDL_WaitThread( thread_id, NULL );
 #endif

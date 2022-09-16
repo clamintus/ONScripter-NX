@@ -16,6 +16,7 @@ SDL_Thread *thread_id;
 PadState pad;
 
 void switch_init();
+void switch_deinit();
 int switch_getinput( void* data );
 
 FILE *romfsOpen( const char* path, const char* mode );

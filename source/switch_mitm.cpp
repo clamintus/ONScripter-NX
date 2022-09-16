@@ -75,6 +75,11 @@ void switch_init()
         fprintf( stderr, "romfsInit: %08X\n", rc );
 }
 
+void switch_deinit()
+{
+    romfsExit();
+}
+
 int switch_getinput( void* data )
 {   
     ThreadData *vars = (ThreadData *)data;
