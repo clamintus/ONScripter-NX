@@ -44,10 +44,16 @@ DATA		:=	data
 INCLUDES	:=	include
 ROMFS	:=	romfs
 
+ifdef FORCE_HD
+	HD	:=	(HD)
+else
+	HD	:=	
+endif
+
 ifdef GAME
 	APP_TITLE	:=	$(GAME) (ONScripter-NX)
 else
-	APP_TITLE	:=	ONScripter-NX
+	APP_TITLE	:=	ONScripter-NX $(HD)
 endif
 
 APP_AUTHOR	:=	clamintus
