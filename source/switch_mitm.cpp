@@ -151,6 +151,9 @@ int switch_getinput( void* data )
         if ( kDown & HidNpadButton_Y )
             send_keyboard_event( SDL_SCANCODE_O, SDLK_o );
 
+        if ( kDown & HidNpadButton_StickL )
+            send_keyboard_event( SDL_SCANCODE_0, SDLK_0 );
+
 
         //          ============= Skip mode ===============
         if ( !ctrl_pressed &&
