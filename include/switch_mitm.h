@@ -14,6 +14,7 @@ ThreadData *thread_data;
 SDL_Thread *thread_id;
 
 PadState pad;
+PadRepeater pad_r;
 
 void switch_init();
 void switch_deinit();

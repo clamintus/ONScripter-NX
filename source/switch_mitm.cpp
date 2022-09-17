@@ -67,6 +67,7 @@ void switch_init()
     padConfigureInput( 1, HidNpadStyleSet_NpadStandard );
 
     padInitializeDefault( &pad );
+    padRepeaterInitialize( &pad_r, 60, 4 );
 
     hidInitializeTouchScreen();
 
@@ -99,8 +100,9 @@ int switch_getinput( void* data )
 
         // printf( "[%02i/%02i/%i %02i:%02i:%02i] Getting inputs...\n", dd, MM, YY, hh, mm, ss );
         padUpdate( &pad );
+        padRepeaterUpdate( &pad_r, padGetButtons( &pad ) & ( HidNpadButton_AnyLeft | HidNpadButton_AnyRight | HidNpadButton_AnyUp | HidNpadButton_AnyDown ) );
 
-        u64 kDown = padGetButtonsDown( &pad );
+        u64 kDown = padGetButtonsDown( &pad ) | padRepeaterGetButtons( &pad_r );
         u64 kHold = padGetButtons( &pad );
 
         if ( kDown & HidNpadButton_Plus )
