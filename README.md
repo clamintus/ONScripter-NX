@@ -64,7 +64,7 @@ Touch input is supported too.
 If it happens to you, please see [the following section for building the external libraries](#building-external-libraries), where I've provided a patch for switch-sdl2_ttf.
 - If you want to integrate all your game files in one executable, put them in the `romfs` folder
 - In your open shell, `cd` to the folder of this repository
-- Run `make`. If you want to enable HD support, do `make FORCE_HD=1` instead. See [HD support remarks](#hd-support-remarks).
+- Run `make`. If you want to enable HD support, do `make ENABLE_HD=1` instead. See [HD support remarks](#hd-support-remarks).
 
 ### Building external libraries
 - Open the shell (devkitPro MSYS if on Windows)

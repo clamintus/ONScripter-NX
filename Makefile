@@ -44,7 +44,7 @@ DATA		:=	data
 INCLUDES	:=	include
 ROMFS	:=	romfs
 
-ifdef FORCE_HD
+ifdef ENABLE_HD
 	HD	:=	(HD)
 else
 	HD	:=	
@@ -72,8 +72,8 @@ CFLAGS	+=	-D__SWITCH__ $(INCLUDE) `sdl2-config --cflags` `smpeg2-config --cflags
             -DUSE_OGG_VORBIS -DENABLE_1BYTE_CHAR -DFORCE_1BYTE_CHAR -DINSANI -DSDL2
 #CFLAGS	+=	-DDEBUG
 
-ifdef FORCE_HD
-	CFLAGS += -DFORCE_HD
+ifdef ENABLE_HD
+	CFLAGS += -DENABLE_HD
 endif
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
