@@ -58,7 +58,7 @@ endif
 
 APP_AUTHOR	:=	clamintus
 
-APP_VERSION	:=	0.3
+APP_VERSION	:=	0.3.1
 
 #---------------------------------------------------------------------------------
 # options for code generation
