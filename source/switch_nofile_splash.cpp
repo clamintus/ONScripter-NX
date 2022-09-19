@@ -69,7 +69,11 @@ void switch_nofile_splash() {
     char* footer = new char[ strlen(_SPLASH_FOOTER_) + strlen(current_dir) - 1 ];
     sprintf( footer, _SPLASH_FOOTER_, current_dir );
     char* version_label = new char[ 256 ];
-    sprintf( version_label, _CORNER_TEXT_1_, ONS_NX_VER / 10, ONS_NX_VER % 10 );
+    sprintf( version_label, _CORNER_TEXT_1_, NX_VERSION / 100, NX_VERSION / 10 );
+    if ( NX_VERSION % 10 != 0 )
+    {
+        sprintf( version_label + strlen( version_label ), ".%d", NX_VERSION % 10 );
+    }
 
     FILE *fp = romfsOpen( "default.ttf", "rb" );
     SDL_Color white = { 0xFF, 0xFF, 0xFF };
